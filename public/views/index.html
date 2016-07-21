@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="patronusApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Patronus Picker</title>
+    <link rel="stylesheet" href="../styles/stylesheet.css">
+    <script src="../vendors/angular/angular.min.js" charset="utf-8"></script>
+    <script src="../scripts/client.js" charset="utf-8"></script>
+    <script src="../scripts/MainController.js" charset="utf-8"></script>
+  </head>
+
+  <body ng-controller="MainController as main">
+    <header>
+        <h1>Pick your Patronus!</h1>
+        <p> ...except your patronus picks you...</p>
+    </header>
+    <main>
+      <div id="names" class="form">
+      <form>
+        <input type="text" ng-model="main.tempName" placeholder="Type name here"></input>
+        <button ng-click="main.submitName()">Submit</button>
+        <ul ng-repeat="name in main.names">
+          <li>{{name.name}}</li>
+        </ul>
+      </form>
+    </div>
+      <div id="patronuses" class="form">
+      <form>
+        <input type="text" ng-model="main.tempPatronus" placeholder="Type patronus here"></input>
+        <button ng-click="main.submitPatronus()">Submit</button>
+        <ul ng-repeat="patronus in main.patronuses">
+          <li>{{patronus.patronus_name}}</li>
+        </ul>
+      </form>
+    </div>
+    </main>
+
+  </body>
+</html>
